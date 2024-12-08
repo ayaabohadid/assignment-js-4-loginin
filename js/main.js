@@ -23,14 +23,14 @@ function clearForm() {
     passwordInput.value = "";
 }
 
-function addUser() {
+function addUser() { 
     var isEmailValid = validateInput(emailInput);
     var isPasswordValid = validateInput(passwordInput);
 
     if (isEmailValid && isPasswordValid) {
         console.log("Valid inputs");
         login(); 
-        window.open("file:///D:/assignment/assignment-js-4-loginin/home.html");
+        window.open("./home.html");
         welcome()
         
     } else {
@@ -55,8 +55,8 @@ function addUser() {
         msg.classList.add("d-none");
         console.log("User successfully signed up:", newUser);
 
-        clearInput();
-        window.open("file:///D:/assignment/assignment-js-4-loginin/home.html");
+        clearForm();
+        window.open("./home.html");
 }
 
 // logininBtn.onclick = addUser;
@@ -102,6 +102,10 @@ function welcome() {
 
 
 //////////////////////////////////////////////////////////////////////////////
+
+
+
+
 document.addEventListener("DOMContentLoaded", function () {
     let emailuser = document.getElementById("userEmai");
     let passworduser = document.getElementById("userPassword");
@@ -112,7 +116,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     let userlist = localStorage.getItem("userConatiner")
-        ? JSON.parse(localStorage.getItem("userContainer"))
+        ? JSON.parse(localStorage.getItem("userContainer"))    
         : [];
 
     function signUp() {
@@ -167,8 +171,8 @@ document.addEventListener("DOMContentLoaded", function () {
         
         msg.classList.add("d-none");
         console.log("User successfully signed up:", newUser);
-        window.open("file:///D:/assignment/assignment-js-4-loginin/home.html");
-   
+        window.open("./home.html");
+    
         
         clearInput();
        
@@ -201,7 +205,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (signUpBtn) {
         signUpBtn.addEventListener("click", signUp);
-        window.open("file:///D:/assignment/assignment-js-4-loginin/home.html");
+        window.open("./home.html");
     }else{
         console.log("not valid")
     }
